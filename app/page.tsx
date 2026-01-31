@@ -96,14 +96,14 @@ export default function Home() {
       <main>
         <HeroSection />
         <BookGrid
-          title="Trending Now"
-          subtitle="Discover what everyone is reading this week"
+          title="Эрэлттэй"
+          subtitle="Энэ долоо хоногт хүмүүс юу уншиж байгааг олж мэдээрэй"
           books={trendingBooks}
         />
         <div className="border-t border-border" />
         <BookGrid
-          title="Bestsellers"
-          subtitle="Our most popular titles of all time"
+          title="Бестселлер"
+          subtitle="Бидний хамгийн алдартай номнууд"
           books={bestsellerBooks}
         />
       </main>

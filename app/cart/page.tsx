@@ -75,20 +75,20 @@ export default function CartPage() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="font-serif text-3xl sm:text-4xl font-medium text-foreground">
-              Shopping Cart
+              Худалдан авалтын сагс
             </h1>
             <p className="mt-2 text-muted-foreground">
-              {cartItems.length} {cartItems.length === 1 ? "item" : "items"} in your cart
+              {cartItems.length} {cartItems.length === 1 ? "бараа" : "бараа"} таны сагсанд байна
             </p>
           </div>
 
           {cartItems.length === 0 ? (
             <div className="text-center py-16">
               <ShoppingBag className="mx-auto h-16 w-16 text-muted-foreground/50" />
-              <h2 className="mt-4 font-serif text-2xl text-foreground">Your cart is empty</h2>
-              <p className="mt-2 text-muted-foreground">Start adding some books to your collection!</p>
+              <h2 className="mt-4 font-serif text-2xl text-foreground">Таны сагс хоосон байна</h2>
+              <p className="mt-2 text-muted-foreground">Өөрийн цуглуулгадаа ном нэмж эхлээрэй!</p>
               <Button asChild className="mt-6 bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/">Browse Books</Link>
+                <Link href="/">Ном үзэх</Link>
               </Button>
             </div>
           ) : (
@@ -171,7 +171,7 @@ export default function CartPage() {
                   <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
                     <Link href="/">
                       <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                      Continue Shopping
+                      Үргэлжлүүлэх
                     </Link>
                   </Button>
                 </div>
@@ -181,23 +181,23 @@ export default function CartPage() {
               <div className="lg:col-span-5 mt-8 lg:mt-0">
                 <div className="bg-card rounded-lg border border-border p-6 sticky top-24">
                   <h2 className="font-serif text-xl font-medium text-foreground mb-6">
-                    Order Summary
+                    Захиалгын дэлгэрэнгүй
                   </h2>
 
                   <div className="space-y-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Subtotal</span>
+                      <span className="text-muted-foreground">Дүн</span>
                       <span className="text-foreground">${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Shipping</span>
+                      <span className="text-muted-foreground">Хүргэлт</span>
                       <span className="text-foreground">
-                        {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+                        {shipping === 0 ? "Үнэгүй" : `$${shipping.toFixed(2)}`}
                       </span>
                     </div>
                     {shipping > 0 && (
                       <p className="text-xs text-muted-foreground">
-                        Free shipping on orders over $50
+                        $50-аас дээш үнийн захиалгад хүргэлт үнэгүй
                       </p>
                     )}
                   </div>
@@ -205,7 +205,7 @@ export default function CartPage() {
                   <Separator className="my-6" />
 
                   <div className="flex justify-between text-lg font-medium">
-                    <span className="text-foreground">Total</span>
+                    <span className="text-foreground">Нийт</span>
                     <span className="text-foreground">${total.toFixed(2)}</span>
                   </div>
 
@@ -215,7 +215,7 @@ export default function CartPage() {
                     size="lg"
                   >
                     <Link href="/checkout">
-                      Proceed to Checkout
+                      Төлбөр төлөх
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -225,9 +225,9 @@ export default function CartPage() {
                     <div className="flex items-start gap-3">
                       <span className="text-xl">🎁</span>
                       <div>
-                        <p className="text-sm font-medium text-foreground">Gift Included</p>
+                        <p className="text-sm font-medium text-foreground">Бэлэг орсон</p>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Every order includes a cute bookmark!
+                          Бүх захиалгад хөөрхөн тэмдэглэгээ дагалдана!
                         </p>
                       </div>
                     </div>

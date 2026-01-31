@@ -12,26 +12,26 @@ export function HeroSection() {
           {/* Content */}
           <div className="text-center lg:text-left">
             <span className="inline-block text-sm font-medium tracking-widest text-accent uppercase mb-4">
-              Book of the Month
+              Сарын ном
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground leading-[1.1] text-balance">
-              Where stories come alive
+              Түүхүүд амилдаг газар
             </h1>
             <p className="mt-3 text-base sm:text-lg font-serif italic text-accent">
-              Growing with books, Growing with you.
+              Номтой хамт өсөж, тантай хамт хөгжинө.
             </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Dive into our curated selection of literary masterpieces. From timeless classics to contemporary gems, find your next unforgettable read.
+              Бидний сонгон шилсэн уран зохиолуудыг нээж, дараагийн мартагдашгүй уншлагаа олоорой.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8" asChild>
                 <Link href="/book/midnight-library">
-                  Buy Now
+                  Худалдаж авах
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-secondary bg-transparent">
-                Explore Collection
+                Цуглуулга үзэх
               </Button>
             </div>
           </div>
@@ -46,7 +46,7 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/20" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                   <span className="text-xs tracking-widest text-muted-foreground uppercase mb-4">
-                    Featured
+                    Онцлох
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl font-medium text-foreground leading-tight">
                     The Midnight Library

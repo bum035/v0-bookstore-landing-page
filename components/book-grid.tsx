@@ -36,7 +36,7 @@ export function BookGrid({ title, subtitle, books }: BookGridProps) {
             )}
           </div>
           <Button variant="ghost" className="text-accent hover:text-accent/80 self-start sm:self-auto gap-1 px-0">
-            View All
+            Бүгдийг үзэх
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
