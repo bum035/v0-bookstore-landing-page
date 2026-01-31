@@ -47,9 +47,9 @@ const orderItems: OrderItem[] = [
 ]
 
 const steps = [
-  { id: 1, name: "Cart", icon: Package },
-  { id: 2, name: "Shipping", icon: MapPin },
-  { id: 3, name: "Confirmation", icon: Check },
+  { id: 1, name: "Сагс", icon: Package },
+  { id: 2, name: "Хүргэлт", icon: MapPin },
+  { id: 3, name: "Баталгаажуулалт", icon: Check },
 ]
 
 const bankInfo = {
@@ -109,13 +109,13 @@ function ConfirmationContent() {
               <Check className="h-10 w-10 text-accent" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground mb-4">
-              Thank You!
+              Баярлалаа!
             </h1>
             <p className="font-serif text-xl sm:text-2xl italic text-accent mb-2">
-              With love, Book Lovers
+              Хайртайгаар, Book Lovers
             </p>
             <p className="text-muted-foreground mt-4">
-              Your order has been placed successfully
+              Таны захиалга амжилттай хүлээн авлаа
             </p>
           </div>
 
@@ -123,7 +123,7 @@ function ConfirmationContent() {
           <div className="bg-card rounded-lg border border-border p-6 mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <p className="text-sm text-muted-foreground">Order ID</p>
+                <p className="text-sm text-muted-foreground">Захиалгын дугаар</p>
                 <p className="font-mono text-2xl font-semibold text-foreground">{orderId}</p>
               </div>
               <Button
@@ -135,12 +135,12 @@ function ConfirmationContent() {
                 {copiedField === "orderId" ? (
                   <>
                     <Check className="mr-2 h-4 w-4 text-accent" />
-                    Copied
+                    Хуулагдсан
                   </>
                 ) : (
                   <>
                     <Copy className="mr-2 h-4 w-4" />
-                    Copy Order ID
+                    Дугаар хуулах
                   </>
                 )}
               </Button>
@@ -150,16 +150,16 @@ function ConfirmationContent() {
           {/* Payment Instructions */}
           <div className="bg-card rounded-lg border border-border p-6 mb-8">
             <h2 className="font-serif text-xl font-medium text-foreground mb-4">
-              Payment Instructions
+              Төлбөрийн заавар
             </h2>
             <p className="text-muted-foreground mb-6">
-              Please transfer the total amount to the account below and use your Order ID as the description.
+              Дараах дансанд нийт дүнг шилжүүлж, Захиалгын дугаараа тайлбар хэсэгт оруулна уу.
             </p>
 
             <div className="bg-secondary/50 rounded-lg p-6 space-y-4">
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Bank Name</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Банкны нэр</p>
                   <p className="text-foreground font-medium">{bankInfo.bankName}</p>
                 </div>
               </div>
@@ -168,7 +168,7 @@ function ConfirmationContent() {
               
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Account Name</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Дансны нэр</p>
                   <p className="text-foreground font-medium">{bankInfo.accountName}</p>
                 </div>
               </div>
@@ -177,7 +177,7 @@ function ConfirmationContent() {
               
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Account Number</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Дансны дугаар</p>
                   <p className="text-foreground font-medium font-mono text-lg">{bankInfo.accountNumber}</p>
                 </div>
                 <Button
@@ -197,7 +197,7 @@ function ConfirmationContent() {
               
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Branch</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Салбар</p>
                   <p className="text-foreground font-medium">{bankInfo.branch}</p>
                 </div>
               </div>
@@ -206,7 +206,7 @@ function ConfirmationContent() {
               
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Total Amount</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Нийт дүн</p>
                   <p className="text-accent font-semibold text-2xl">${total.toFixed(2)}</p>
                 </div>
                 <Button
@@ -225,7 +225,7 @@ function ConfirmationContent() {
 
             <div className="mt-6 p-4 bg-accent/10 rounded-lg border border-accent/20">
               <p className="text-sm text-foreground">
-                <strong>Important:</strong> Please use your Order ID ({orderId}) as the transfer description so we can process your order quickly.
+                <strong>Анхаарах:</strong> Захиалгаа хурдан боловсруулахын тулд Захиалгын дугаар ({orderId})-аа шилжүүлгийн утгад заавал бичнэ үү.
               </p>
             </div>
           </div>
@@ -233,7 +233,7 @@ function ConfirmationContent() {
           {/* Order Summary */}
           <div className="bg-card rounded-lg border border-border p-6 mb-8">
             <h2 className="font-serif text-xl font-medium text-foreground mb-6">
-              Order Summary
+              Захиалгын дэлгэрэнгүй
             </h2>
 
             <div className="space-y-4">
@@ -247,7 +247,7 @@ function ConfirmationContent() {
                     <p className="font-medium text-foreground">{item.title}</p>
                     <p className="text-sm text-muted-foreground">{item.author}</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Qty: {item.quantity} x ${item.price.toFixed(2)}
+                      Тоо ширхэг: {item.quantity} x ${item.price.toFixed(2)}
                     </p>
                   </div>
                   <p className="font-medium text-foreground">
@@ -261,18 +261,18 @@ function ConfirmationContent() {
 
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Subtotal</span>
+                <span className="text-muted-foreground">Дүн</span>
                 <span className="text-foreground">${subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Shipping</span>
+                <span className="text-muted-foreground">Хүргэлт</span>
                 <span className="text-foreground">
-                  {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+                  {shipping === 0 ? "Үнэгүй" : `$${shipping.toFixed(2)}`}
                 </span>
               </div>
               <Separator className="my-4" />
               <div className="flex justify-between text-lg font-medium">
-                <span className="text-foreground">Total</span>
+                <span className="text-foreground">Нийт</span>
                 <span className="text-foreground">${total.toFixed(2)}</span>
               </div>
             </div>
@@ -282,9 +282,9 @@ function ConfirmationContent() {
               <div className="flex items-start gap-3">
                 <span className="text-xl">🎁</span>
                 <div>
-                  <p className="text-sm font-medium text-foreground">Gift Included</p>
+                  <p className="text-sm font-medium text-foreground">Бэлэг орсон</p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    You will receive a cute bookmark with this order!
+                    Энэ захиалгад хөөрхөн тэмдэглэгээ дагалдана!
                   </p>
                 </div>
               </div>
@@ -294,10 +294,10 @@ function ConfirmationContent() {
           {/* Contact Support */}
           <div className="bg-card rounded-lg border border-border p-6 mb-8">
             <h2 className="font-serif text-xl font-medium text-foreground mb-4">
-              Have Questions?
+              Асуух зүйл байна уу?
             </h2>
             <p className="text-muted-foreground mb-6">
-              {"Our team is here to help. Don't hesitate to reach out!"}
+              Бидний баг танд туслахад бэлэн байна. Санаа зоволтгүй холбогдоорой!
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -326,13 +326,13 @@ function ConfirmationContent() {
               size="lg"
             >
               <Link href="/">
-                Continue Shopping
+                Дэлгүүр үргэлжлүүлэх
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             
             <p className="mt-6 text-sm text-muted-foreground flex items-center justify-center gap-1">
-              Thank you for shopping with us <Heart className="h-4 w-4 text-accent inline" />
+              Биднээс худалдан авсанд баярлалаа <Heart className="h-4 w-4 text-accent inline" />
             </p>
           </div>
         </div>
@@ -349,7 +349,7 @@ export default function ConfirmationPage() {
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent mx-auto"></div>
-          <p className="mt-4 text-muted-foreground">Loading...</p>
+          <p className="mt-4 text-muted-foreground">Ачаалж байна...</p>
         </div>
       </div>
     }>

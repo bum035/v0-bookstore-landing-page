@@ -36,7 +36,7 @@ export function BookCard({ id, title, author, price, rating, coverColor }: BookC
         <div className="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button size="sm" variant="secondary" className="gap-2">
             <ShoppingCart className="h-4 w-4" />
-            Add to Cart
+            Сагсанд нэмэх
           </Button>
         </div>
       </div>

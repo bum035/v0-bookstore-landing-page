@@ -52,9 +52,9 @@ const orderItems: OrderItem[] = [
 ]
 
 const steps = [
-  { id: 1, name: "Cart", icon: Package },
-  { id: 2, name: "Shipping", icon: MapPin },
-  { id: 3, name: "Confirmation", icon: Check },
+  { id: 1, name: "Сагс", icon: Package },
+  { id: 2, name: "Хүргэлт", icon: MapPin },
+  { id: 3, name: "Баталгаажуулалт", icon: Check },
 ]
 
 export default function CheckoutPage() {
@@ -143,10 +143,10 @@ export default function CheckoutPage() {
           {/* Header */}
           <div className="text-center mb-10">
             <h1 className="font-serif text-3xl sm:text-4xl font-medium text-foreground">
-              Shipping Information
+              Хүргэлтийн мэдээлэл
             </h1>
             <p className="mt-2 text-muted-foreground">
-              Please enter your details to complete your order
+              Захиалгаа дуусгахын тулд мэдээллээ оруулна уу
             </p>
           </div>
 
@@ -160,21 +160,21 @@ export default function CheckoutPage() {
                       <User className="h-5 w-5 text-accent" />
                     </div>
                     <h2 className="font-serif text-xl font-medium text-foreground">
-                      Contact Details
+                      Холбоо барих мэдээлэл
                     </h2>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="sm:col-span-2">
                       <Label htmlFor="name" className="text-foreground">
-                        Full Name <span className="text-destructive">*</span>
+                        Бүтэн нэр <span className="text-destructive">*</span>
                       </Label>
                       <Input
                         id="name"
                         name="name"
                         type="text"
                         required
-                        placeholder="Enter your full name"
+                        placeholder="Бүтэн нэрээ оруулна уу"
                         value={formData.name}
                         onChange={handleInputChange}
                         className="mt-1.5"
@@ -182,14 +182,14 @@ export default function CheckoutPage() {
                     </div>
                     <div className="sm:col-span-2">
                       <Label htmlFor="phone" className="text-foreground">
-                        Phone Number <span className="text-destructive">*</span>
+                        Утасны дугаар <span className="text-destructive">*</span>
                       </Label>
                       <Input
                         id="phone"
                         name="phone"
                         type="tel"
                         required
-                        placeholder="Enter your phone number"
+                        placeholder="Утасны дугаараа оруулна уу"
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="mt-1.5"
@@ -204,21 +204,21 @@ export default function CheckoutPage() {
                       <MapPin className="h-5 w-5 text-accent" />
                     </div>
                     <h2 className="font-serif text-xl font-medium text-foreground">
-                      Delivery Address
+                      Хүргэх хаяг
                     </h2>
                   </div>
 
                   <div className="grid gap-4">
                     <div>
                       <Label htmlFor="address" className="text-foreground">
-                        Street Address <span className="text-destructive">*</span>
+                        Хаяг <span className="text-destructive">*</span>
                       </Label>
                       <Input
                         id="address"
                         name="address"
                         type="text"
                         required
-                        placeholder="House number, street name"
+                        placeholder="Байр, гудамжны нэр"
                         value={formData.address}
                         onChange={handleInputChange}
                         className="mt-1.5"
@@ -226,14 +226,14 @@ export default function CheckoutPage() {
                     </div>
                     <div>
                       <Label htmlFor="city" className="text-foreground">
-                        City / District <span className="text-destructive">*</span>
+                        Хот / Дүүрэг <span className="text-destructive">*</span>
                       </Label>
                       <Input
                         id="city"
                         name="city"
                         type="text"
                         required
-                        placeholder="Enter your city"
+                        placeholder="Хот / Дүүрэг оруулна уу"
                         value={formData.city}
                         onChange={handleInputChange}
                         className="mt-1.5"
@@ -241,12 +241,12 @@ export default function CheckoutPage() {
                     </div>
                     <div>
                       <Label htmlFor="notes" className="text-foreground">
-                        Delivery Notes (Optional)
+                        Тэмдэглэл (Заавал биш)
                       </Label>
                       <Textarea
                         id="notes"
                         name="notes"
-                        placeholder="Any special instructions for delivery..."
+                        placeholder="Хүргэлттэй холбоотой тусгай заавар..."
                         value={formData.notes}
                         onChange={handleInputChange}
                         className="mt-1.5 min-h-[80px]"
@@ -264,10 +264,10 @@ export default function CheckoutPage() {
                     disabled={!isFormValid || isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Processing..."
+                      "Боловсруулж байна..."
                     ) : (
                       <>
-                        Place Order
+                        Захиалга өгөх
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </>
                     )}
@@ -279,7 +279,7 @@ export default function CheckoutPage() {
                   <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
                     <Link href="/cart">
                       <ArrowLeft className="mr-2 h-4 w-4" />
-                      Back to Cart
+                      Сагс руу буцах
                     </Link>
                   </Button>
                 </div>
@@ -290,7 +290,7 @@ export default function CheckoutPage() {
             <div className="lg:col-span-5 mt-8 lg:mt-0">
               <div className="bg-card rounded-lg border border-border p-6 sticky top-24">
                 <h2 className="font-serif text-xl font-medium text-foreground mb-6">
-                  Order Summary
+                  Захиалгын дэлгэрэнгүй
                 </h2>
 
                 {/* Items */}
@@ -307,7 +307,7 @@ export default function CheckoutPage() {
                         </p>
                         <p className="text-xs text-muted-foreground">{item.author}</p>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Qty: {item.quantity} x ${item.price.toFixed(2)}
+                          Тоо ширхэг: {item.quantity} x ${item.price.toFixed(2)}
                         </p>
                       </div>
                       <p className="text-sm font-medium text-foreground">
@@ -321,13 +321,13 @@ export default function CheckoutPage() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Subtotal</span>
+                    <span className="text-muted-foreground">Дүн</span>
                     <span className="text-foreground">${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Shipping</span>
+                    <span className="text-muted-foreground">Хүргэлт</span>
                     <span className="text-foreground">
-                      {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+                      {shipping === 0 ? "Үнэгүй" : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function CheckoutPage() {
                 <Separator className="my-6" />
 
                 <div className="flex justify-between text-lg font-medium">
-                  <span className="text-foreground">Total</span>
+                  <span className="text-foreground">Нийт</span>
                   <span className="text-foreground">${total.toFixed(2)}</span>
                 </div>
 
@@ -349,10 +349,10 @@ export default function CheckoutPage() {
                   onClick={handleSubmit}
                 >
                   {isSubmitting ? (
-                    "Processing..."
+                    "Боловсруулж байна..."
                   ) : (
                     <>
-                      Place Order
+                      Захиалга өгөх
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </>
                   )}
@@ -363,9 +363,9 @@ export default function CheckoutPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🎁</span>
                     <div>
-                      <p className="text-sm font-medium text-foreground">Gift Included</p>
+                      <p className="text-sm font-medium text-foreground">Бэлэг орсон</p>
                       <p className="text-xs text-muted-foreground mt-1">
-                        You will receive a cute bookmark with this order!
+                        Энэ захиалгад хөөрхөн тэмдэглэгээ дагалдана!
                       </p>
                     </div>
                   </div>

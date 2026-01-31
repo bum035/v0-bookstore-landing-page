@@ -283,13 +283,13 @@ export default function AdminDashboard() {
               </Link>
               <div className="hidden sm:block h-6 w-px bg-border" />
               <h1 className="hidden sm:block text-lg font-semibold text-foreground">
-                Admin Dashboard
+                Хянах самбар
               </h1>
             </div>
             <Button variant="outline" size="sm" asChild className="bg-transparent">
               <Link href="/">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Store
+                Дэлгүүр рүү буцах
               </Link>
             </Button>
           </div>
@@ -305,7 +305,7 @@ export default function AdminDashboard() {
                 <Package className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Total Books</p>
+                <p className="text-sm text-muted-foreground">Нийт ном</p>
                 <p className="text-2xl font-semibold text-foreground">
                   {inventory.length}
                 </p>
@@ -318,7 +318,7 @@ export default function AdminDashboard() {
                 <ShoppingBag className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Total Orders</p>
+                <p className="text-sm text-muted-foreground">Нийт захиалга</p>
                 <p className="text-2xl font-semibold text-foreground">
                   {orders.length}
                 </p>
@@ -331,7 +331,7 @@ export default function AdminDashboard() {
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Paid Orders</p>
+                <p className="text-sm text-muted-foreground">Төлсөн захиалга</p>
                 <p className="text-2xl font-semibold text-foreground">
                   {orders.filter((o) => o.paymentStatus === "paid").length}
                 </p>
@@ -344,7 +344,7 @@ export default function AdminDashboard() {
                 <Truck className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Shipped</p>
+                <p className="text-sm text-muted-foreground">Илгээсэн</p>
                 <p className="text-2xl font-semibold text-foreground">
                   {orders.filter((o) => o.shippingStatus === "shipped").length}
                 </p>
@@ -358,11 +358,11 @@ export default function AdminDashboard() {
           <TabsList>
             <TabsTrigger value="orders" className="gap-2">
               <ShoppingBag className="h-4 w-4" />
-              Orders
+              Захиалгууд
             </TabsTrigger>
             <TabsTrigger value="inventory" className="gap-2">
               <Package className="h-4 w-4" />
-              Inventory
+              Агуулах
             </TabsTrigger>
           </TabsList>
 
@@ -370,21 +370,21 @@ export default function AdminDashboard() {
           <TabsContent value="orders" className="space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-serif font-semibold text-foreground">
-                Order Management
+                Захиалга удирдах
               </h2>
             </div>
             <div className="rounded-lg border border-border bg-card overflow-hidden">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
-                    <TableHead>Order ID</TableHead>
-                    <TableHead>Customer</TableHead>
-                    <TableHead>Phone</TableHead>
-                    <TableHead>Items</TableHead>
-                    <TableHead>Total</TableHead>
-                    <TableHead>Payment</TableHead>
-                    <TableHead>Shipping</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Захиалгын дугаар</TableHead>
+                    <TableHead>Хэрэглэгч</TableHead>
+                    <TableHead>Утас</TableHead>
+                    <TableHead>Барааны тоо</TableHead>
+                    <TableHead>Нийт</TableHead>
+                    <TableHead>Төлбөр</TableHead>
+                    <TableHead>Хүргэлт</TableHead>
+                    <TableHead className="text-right">Үйлдэл</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -426,7 +426,7 @@ export default function AdminDashboard() {
                           ) : (
                             <Clock className="mr-1 h-3 w-3" />
                           )}
-                          {order.paymentStatus === "paid" ? "Paid" : "Pending"}
+                          {order.paymentStatus === "paid" ? "Төлсөн" : "Хүлээгдэж буй"}
                         </Badge>
                       </TableCell>
                       <TableCell>
@@ -448,8 +448,8 @@ export default function AdminDashboard() {
                             <Clock className="mr-1 h-3 w-3" />
                           )}
                           {order.shippingStatus === "shipped"
-                            ? "Shipped"
-                            : "Pending"}
+                            ? "Илгээсэн"
+                            : "Хүлээгдэж буй"}
                         </Badge>
                       </TableCell>
                       <TableCell className="text-right">
@@ -465,8 +465,8 @@ export default function AdminDashboard() {
                             }`}
                           >
                             {order.paymentStatus === "paid"
-                              ? "Mark Unpaid"
-                              : "Mark Paid"}
+                              ? "Төлөөгүй болгох"
+                              : "Төлсөн болгох"}
                           </Button>
                           <Button
                             variant="outline"
@@ -479,8 +479,8 @@ export default function AdminDashboard() {
                             }`}
                           >
                             {order.shippingStatus === "shipped"
-                              ? "Mark Pending"
-                              : "Mark Shipped"}
+                              ? "Хүлээгдэж буй болгох"
+                              : "Илгээсэн болгох"}
                           </Button>
                         </div>
                       </TableCell>
@@ -495,50 +495,50 @@ export default function AdminDashboard() {
           <TabsContent value="inventory" className="space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-serif font-semibold text-foreground">
-                Book Inventory
+                Номын агуулах
               </h2>
               <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
                 <DialogTrigger asChild>
                   <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
                     <Plus className="mr-2 h-4 w-4" />
-                    Add Book
+                    Ном нэмэх
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle className="font-serif">
-                      Add New Book
+                      Шинэ ном нэмэх
                     </DialogTitle>
                     <DialogDescription>
-                      Enter the details of the new book to add to inventory.
+                      Агуулахад нэмэх номын мэдээллийг оруулна уу.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">
                     <div className="grid gap-2">
-                      <Label htmlFor="title">Title</Label>
+                      <Label htmlFor="title">Нэр</Label>
                       <Input
                         id="title"
                         value={newBook.title}
                         onChange={(e) =>
                           setNewBook({ ...newBook, title: e.target.value })
                         }
-                        placeholder="Enter book title"
+                        placeholder="Номын нэр оруулна уу"
                       />
                     </div>
                     <div className="grid gap-2">
-                      <Label htmlFor="author">Author</Label>
+                      <Label htmlFor="author">Зохиолч</Label>
                       <Input
                         id="author"
                         value={newBook.author}
                         onChange={(e) =>
                           setNewBook({ ...newBook, author: e.target.value })
                         }
-                        placeholder="Enter author name"
+                        placeholder="Зохиолчийн нэр оруулна уу"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="grid gap-2">
-                        <Label htmlFor="price">Price ($)</Label>
+                        <Label htmlFor="price">Үнэ ($)</Label>
                         <Input
                           id="price"
                           type="number"
@@ -551,7 +551,7 @@ export default function AdminDashboard() {
                         />
                       </div>
                       <div className="grid gap-2">
-                        <Label htmlFor="stock">Stock</Label>
+                        <Label htmlFor="stock">Үлдэгдэл</Label>
                         <Input
                           id="stock"
                           type="number"
@@ -564,7 +564,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <div className="grid gap-2">
-                      <Label htmlFor="category">Category</Label>
+                      <Label htmlFor="category">Ангилал</Label>
                       <Select
                         value={newBook.category}
                         onValueChange={(value) =>
@@ -575,15 +575,15 @@ export default function AdminDashboard() {
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Fiction">Fiction</SelectItem>
+                          <SelectItem value="Fiction">Уран зохиол</SelectItem>
                           <SelectItem value="Non-Fiction">
-                            Non-Fiction
+                            Нийтлэл
                           </SelectItem>
                           <SelectItem value="Science Fiction">
-                            Science Fiction
+                            Шинжлэх ухаан
                           </SelectItem>
-                          <SelectItem value="Mystery">Mystery</SelectItem>
-                          <SelectItem value="Romance">Romance</SelectItem>
+                          <SelectItem value="Mystery">Нууцлаг</SelectItem>
+                          <SelectItem value="Romance">Романс</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -594,13 +594,13 @@ export default function AdminDashboard() {
                       onClick={() => setIsAddDialogOpen(false)}
                       className="bg-transparent"
                     >
-                      Cancel
+                      Цуцлах
                     </Button>
                     <Button
                       onClick={handleAddBook}
                       className="bg-accent text-accent-foreground hover:bg-accent/90"
                     >
-                      Add Book
+                      Ном нэмэх
                     </Button>
                   </DialogFooter>
                 </DialogContent>
@@ -611,12 +611,12 @@ export default function AdminDashboard() {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
-                    <TableHead>Title</TableHead>
-                    <TableHead>Author</TableHead>
-                    <TableHead>Category</TableHead>
-                    <TableHead>Price</TableHead>
-                    <TableHead>Stock</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Нэр</TableHead>
+                    <TableHead>Зохиолч</TableHead>
+                    <TableHead>Ангилал</TableHead>
+                    <TableHead>Үнэ</TableHead>
+                    <TableHead>Үлдэгдэл</TableHead>
+                    <TableHead className="text-right">Үйлдэл</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -642,7 +642,7 @@ export default function AdminDashboard() {
                         </span>
                         {book.stock < 30 && (
                           <span className="ml-2 text-xs text-amber-600">
-                            Low stock
+                            Бага үлдэгдэл
                           </span>
                         )}
                       </TableCell>
@@ -656,22 +656,22 @@ export default function AdminDashboard() {
                                 onClick={() => setEditingBook(book)}
                               >
                                 <Pencil className="h-4 w-4" />
-                                <span className="sr-only">Edit</span>
+                                <span className="sr-only">Засах</span>
                               </Button>
                             </DialogTrigger>
                             <DialogContent>
                               <DialogHeader>
                                 <DialogTitle className="font-serif">
-                                  Edit Book
+                                  Ном засах
                                 </DialogTitle>
                                 <DialogDescription>
-                                  Update the book details below.
+                                  Номын мэдээллийг доор засна уу.
                                 </DialogDescription>
                               </DialogHeader>
                               {editingBook && (
                                 <div className="grid gap-4 py-4">
                                   <div className="grid gap-2">
-                                    <Label htmlFor="edit-title">Title</Label>
+                                    <Label htmlFor="edit-title">Нэр</Label>
                                     <Input
                                       id="edit-title"
                                       value={editingBook.title}
@@ -684,7 +684,7 @@ export default function AdminDashboard() {
                                     />
                                   </div>
                                   <div className="grid gap-2">
-                                    <Label htmlFor="edit-author">Author</Label>
+                                    <Label htmlFor="edit-author">Зохиолч</Label>
                                     <Input
                                       id="edit-author"
                                       value={editingBook.author}
@@ -699,7 +699,7 @@ export default function AdminDashboard() {
                                   <div className="grid grid-cols-2 gap-4">
                                     <div className="grid gap-2">
                                       <Label htmlFor="edit-price">
-                                        Price ($)
+                                        Үнэ ($)
                                       </Label>
                                       <Input
                                         id="edit-price"
@@ -717,7 +717,7 @@ export default function AdminDashboard() {
                                       />
                                     </div>
                                     <div className="grid gap-2">
-                                      <Label htmlFor="edit-stock">Stock</Label>
+                                      <Label htmlFor="edit-stock">Үлдэгдэл</Label>
                                       <Input
                                         id="edit-stock"
                                         type="number"
@@ -741,13 +741,13 @@ export default function AdminDashboard() {
                                   onClick={() => setEditingBook(null)}
                                   className="bg-transparent"
                                 >
-                                  Cancel
+                                  Цуцлах
                                 </Button>
                                 <Button
                                   onClick={handleUpdateBook}
                                   className="bg-accent text-accent-foreground hover:bg-accent/90"
                                 >
-                                  Save Changes
+                                  Өөрчлөлт хадгалах
                                 </Button>
                               </DialogFooter>
                             </DialogContent>
@@ -759,7 +759,7 @@ export default function AdminDashboard() {
                             onClick={() => deleteBook(book.id)}
                           >
                             <Trash2 className="h-4 w-4" />
-                            <span className="sr-only">Delete</span>
+                            <span className="sr-only">Устгах</span>
                           </Button>
                         </div>
                       </TableCell>

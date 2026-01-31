@@ -16,10 +16,10 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const categories = [
-  { name: "Fiction", href: "#fiction" },
-  { name: "Non-Fiction", href: "#non-fiction" },
-  { name: "Bestsellers", href: "#bestsellers" },
-  { name: "Coming Soon", href: "#coming-soon" },
+  { name: "Уран зохиол", href: "#fiction" },
+  { name: "Нийтлэл", href: "#non-fiction" },
+  { name: "Бестселлер", href: "#bestsellers" },
+  { name: "Удахгүй", href: "#coming-soon" },
 ]
 
 export function Navbar() {
@@ -48,7 +48,7 @@ export function Navbar() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search books, authors, or genres..."
+                placeholder="Ном, зохиолч, төрөл хайх..."
                 className="w-full pl-10 pr-4 bg-secondary border-transparent focus:border-accent focus:bg-background transition-all"
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
@@ -74,7 +74,7 @@ export function Navbar() {
             {/* Mobile Search */}
             <Button variant="ghost" size="icon" className="md:hidden">
               <Search className="h-5 w-5" />
-              <span className="sr-only">Search</span>
+              <span className="sr-only">Хайх</span>
             </Button>
 
             {/* Theme Toggle */}
@@ -85,7 +85,7 @@ export function Navbar() {
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
+              <span className="sr-only">Загвар солих</span>
             </Button>
 
             {/* User */}
@@ -93,15 +93,15 @@ export function Navbar() {
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <User className="h-5 w-5" />
-                  <span className="sr-only">User menu</span>
+                  <span className="sr-only">Хэрэглэгч</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Sign In</DropdownMenuItem>
-                <DropdownMenuItem>Create Account</DropdownMenuItem>
-                <DropdownMenuItem>Wishlist</DropdownMenuItem>
+                <DropdownMenuItem>Нэвтрэх</DropdownMenuItem>
+                <DropdownMenuItem>Бүртгүүлэх</DropdownMenuItem>
+                <DropdownMenuItem>Хадгалсан</DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/admin">Admin Dashboard</Link>
+                  <Link href="/admin">Хянах самбар</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -113,7 +113,7 @@ export function Navbar() {
                 <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-[10px] font-medium text-accent-foreground flex items-center justify-center">
                   3
                 </span>
-                <span className="sr-only">Cart</span>
+                <span className="sr-only">Сагс</span>
               </Link>
             </Button>
 
@@ -122,7 +122,7 @@ export function Navbar() {
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="h-5 w-5" />
-                  <span className="sr-only">Menu</span>
+                  <span className="sr-only">Цэс</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
@@ -142,7 +142,7 @@ export function Navbar() {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       type="search"
-                      placeholder="Search books..."
+                      placeholder="Ном хайх..."
                       className="w-full pl-10 pr-4"
                     />
                   </div>

@@ -13,21 +13,21 @@ import { Label } from "@/components/ui/label"
 
 const footerLinks = {
   shop: [
-    { name: "Fiction", href: "#fiction" },
-    { name: "Non-Fiction", href: "#non-fiction" },
-    { name: "Bestsellers", href: "#bestsellers" },
-    { name: "Coming Soon", href: "#coming-soon" },
+    { name: "Уран зохиол", href: "#fiction" },
+    { name: "Нийтлэл", href: "#non-fiction" },
+    { name: "Бестселлер", href: "#bestsellers" },
+    { name: "Удахгүй", href: "#coming-soon" },
   ],
   support: [
-    { name: "Contact Us", href: "#" },
-    { name: "FAQ", href: "#" },
-    { name: "Shipping Info", href: "#" },
-    { name: "Returns", href: "#" },
+    { name: "Холбоо барих", href: "#" },
+    { name: "Түгээмэл асуулт", href: "#" },
+    { name: "Хүргэлтийн мэдээлэл", href: "#" },
+    { name: "Буцаалт", href: "#" },
   ],
   company: [
-    { name: "About Us", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
+    { name: "Бидний тухай", href: "#" },
+    { name: "Нууцлалын бодлого", href: "#" },
+    { name: "Үйлчилгээний нөхцөл", href: "#" },
   ],
 }
 
@@ -64,7 +64,7 @@ export function Footer() {
             
             {/* Slogan */}
             <p className="mt-4 text-base font-serif italic text-accent">
-              Growing with books, Growing with you.
+              Номтой хамт өсөж, тантай хамт хөгжинө.
             </p>
             
             {/* Social Links with Usernames */}
@@ -119,7 +119,7 @@ export function Footer() {
           <div className="lg:col-span-4 grid grid-cols-3 gap-6">
             {/* Shop Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Shop</h3>
+              <h3 className="text-sm font-semibold text-foreground">Дэлгүүр</h3>
               <ul className="mt-4 space-y-3">
                 {footerLinks.shop.map((link) => (
                   <li key={link.name}>
@@ -136,7 +136,7 @@ export function Footer() {
 
             {/* Support Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Support</h3>
+              <h3 className="text-sm font-semibold text-foreground">Тусламж</h3>
               <ul className="mt-4 space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
@@ -153,7 +153,7 @@ export function Footer() {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Company</h3>
+              <h3 className="text-sm font-semibold text-foreground">Компани</h3>
               <ul className="mt-4 space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
@@ -174,10 +174,10 @@ export function Footer() {
             <div className="bg-background rounded-lg border border-border p-5">
               <div className="flex items-center gap-2 mb-4">
                 <BookPlus className="h-5 w-5 text-accent" />
-                <h3 className="text-sm font-semibold text-foreground">Request a Book</h3>
+                <h3 className="text-sm font-semibold text-foreground">Ном захиалах</h3>
               </div>
               <p className="text-xs text-muted-foreground mb-4">
-                {"Can't find what you're looking for? Let us know!"}
+                Хайж буй номоо олохгүй байна уу? Бидэнд хэлээрэй!
               </p>
               
               {isSubmitted ? (
@@ -185,19 +185,19 @@ export function Footer() {
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
                     <Send className="h-5 w-5 text-accent" />
                   </div>
-                  <p className="text-sm font-medium text-foreground">Thank you!</p>
-                  <p className="text-xs text-muted-foreground mt-1">{"We'll look into your request."}</p>
+                  <p className="text-sm font-medium text-foreground">Баярлалаа!</p>
+                  <p className="text-xs text-muted-foreground mt-1">Бид таны хүсэлтийг хүлээн авлаа.</p>
                 </div>
               ) : (
                 <form onSubmit={handleRequestSubmit} className="space-y-3">
                   <div>
                     <Label htmlFor="request-name" className="text-xs text-muted-foreground">
-                      Your Name
+                      Таны нэр
                     </Label>
                     <Input
                       id="request-name"
                       type="text"
-                      placeholder="Enter your name"
+                      placeholder="Нэрээ оруулна уу"
                       value={bookRequest.name}
                       onChange={(e) => setBookRequest({ ...bookRequest, name: e.target.value })}
                       className="mt-1 h-9 text-sm"
@@ -206,12 +206,12 @@ export function Footer() {
                   </div>
                   <div>
                     <Label htmlFor="book-title" className="text-xs text-muted-foreground">
-                      Book Title
+                      Номын нэр
                     </Label>
                     <Input
                       id="book-title"
                       type="text"
-                      placeholder="Enter book title"
+                      placeholder="Номын нэр оруулна уу"
                       value={bookRequest.bookTitle}
                       onChange={(e) => setBookRequest({ ...bookRequest, bookTitle: e.target.value })}
                       className="mt-1 h-9 text-sm"
@@ -220,12 +220,12 @@ export function Footer() {
                   </div>
                   <div>
                     <Label htmlFor="book-author" className="text-xs text-muted-foreground">
-                      Author (Optional)
+                      Зохиолч (Заавал биш)
                     </Label>
                     <Input
                       id="book-author"
                       type="text"
-                      placeholder="Enter author name"
+                      placeholder="Зохиолчийн нэр оруулна уу"
                       value={bookRequest.author}
                       onChange={(e) => setBookRequest({ ...bookRequest, author: e.target.value })}
                       className="mt-1 h-9 text-sm"
@@ -236,7 +236,7 @@ export function Footer() {
                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-9 text-sm"
                   >
                     <Send className="h-3.5 w-3.5 mr-2" />
-                    Submit Request
+                    Илгээх
                   </Button>
                 </form>
               )}
@@ -248,10 +248,10 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} Book Lovers Bookstore. All rights reserved.
+              &copy; {new Date().getFullYear()} Book Lovers Bookstore. Бүх эрх хуулиар хамгаалагдсан.
             </p>
             <p className="text-xs font-serif italic text-accent">
-              With love, Book Lovers
+              Хайртайгаар, Book Lovers
             </p>
           </div>
         </div>

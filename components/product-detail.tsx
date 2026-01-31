@@ -36,7 +36,7 @@ function StarRating({ rating, reviewCount }: { rating: number; reviewCount: numb
         ))}
       </div>
       <span className="text-sm text-muted-foreground">
-        {rating.toFixed(1)} ({reviewCount} reviews)
+        {rating.toFixed(1)} ({reviewCount} сэтгэгдэл)
       </span>
     </div>
   )
@@ -136,11 +136,11 @@ export function ProductDetail({
           <div className="mt-3">
             {inStock ? (
               <span className="text-sm text-green-600 dark:text-green-400 font-medium">
-                In Stock
+                Байгаа
               </span>
             ) : (
               <span className="text-sm text-destructive font-medium">
-                Out of Stock
+                Дууссан
               </span>
             )}
           </div>
@@ -148,7 +148,7 @@ export function ProductDetail({
           {/* Description */}
           <div className="mt-6">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
-              Description
+              Тайлбар
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               {description}
@@ -159,12 +159,12 @@ export function ProductDetail({
 
           {/* Quantity Selector */}
           <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-foreground">Quantity:</span>
+            <span className="text-sm font-medium text-foreground">Тоо ширхэг:</span>
             <div className="flex items-center border border-border rounded-md">
               <button
                 onClick={decrementQuantity}
                 className="p-2 hover:bg-secondary transition-colors"
-                aria-label="Decrease quantity"
+                aria-label="Багасгах"
               >
                 <Minus className="h-4 w-4 text-muted-foreground" />
               </button>
@@ -174,7 +174,7 @@ export function ProductDetail({
               <button
                 onClick={incrementQuantity}
                 className="p-2 hover:bg-secondary transition-colors"
-                aria-label="Increase quantity"
+                aria-label="Нэмэгдүүлэх"
               >
                 <Plus className="h-4 w-4 text-muted-foreground" />
               </button>
@@ -189,7 +189,7 @@ export function ProductDetail({
               disabled={!inStock}
             >
               <ShoppingCart className="h-5 w-5" />
-              Add to Basket
+              Сагсанд нэмэх
             </Button>
             <Button
               size="lg"
@@ -198,7 +198,7 @@ export function ProductDetail({
               onClick={() => setIsWishlisted(!isWishlisted)}
             >
               <Heart className={`h-5 w-5 ${isWishlisted ? "fill-accent" : ""}`} />
-              {isWishlisted ? "Wishlisted" : "Wishlist"}
+              {isWishlisted ? "Хадгалсан" : "Хадгалах"}
             </Button>
           </div>
 
@@ -210,11 +210,11 @@ export function ProductDetail({
               </div>
               <div className="flex-1">
                 <h4 className="text-sm font-semibold text-foreground flex items-center gap-2">
-                  <span>Gift Included</span>
+                  <span>Бэлэг орсон</span>
                   <Bookmark className="h-4 w-4 text-accent" />
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  You will receive a cute bookmark with this book!
+                  Энэ номд хөөрхөн тэмдэглэгээ дагалдана!
                 </p>
               </div>
             </div>
